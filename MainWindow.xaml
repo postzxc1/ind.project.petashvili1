@@ -1,0 +1,110 @@
+﻿<Window x:Class="ind.project.petashvili1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ind.project.petashvili1"
+        mc:Ignorable="d"
+        Title="KirPay" Height="600" Width="400" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="AntiqueWhite" Offset="0"/>
+            <GradientStop Color="White" Offset="1"/>
+            <GradientStop Color="Aqua" Offset="0.509"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="24.775"/>
+            <RowDefinition Height="275.225"/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+        <Grid Name="ToolBar" Grid.Row="0">
+            <Polygon Fill="Black" Opacity="0.3"
+                 Points="107,0,
+                 115,7,
+                 247,7,
+                 257,0" Margin="10,0,-10,0"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Image Name="MinButton" Height="15" Width="25" Margin="3" MouseDown="MinButton_MouseDown">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="Source/Пассив свер.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinButton}"
+                                             Value="True">
+                                    <Setter Property="Source" Value="Source/Актив свер.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="1"></BlurEffect>
+                    </Image.Effect>
+                </Image>
+                <Image Name="ExitButton" Height="13" Width="23" Margin="3" MouseDown="ExitButton_MouseDown">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="Source/Пассив крест.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=ExitButton}"
+                                             Value="True">
+                                    <Setter Property="Source" Value="Source/Актив крест.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="1"></BlurEffect>
+                    </Image.Effect>
+                </Image>
+            </StackPanel>
+        </Grid>
+        <Grid Name="LogoContainer" Grid.Row="1">
+            <Image Source="/Source/Кошелек.png" Margin="0,0,0,-74"/>
+            <Grid Name="LogoPayments" Grid.Row="2">
+                <Image Name="PaymentsButton" Margin="-118,210,118,-210">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="Source/Payments.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=PaymentsButton}"
+                                             Value="True">
+                                    <Setter Property="Source" Value="Source/Payments active.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </Grid>
+            <Image Source="/Source/Пополнить.png" Margin="149,207,-87,-203"/>
+            <Grid Name="LogoПополнить" Grid.Row="3">
+                <Image Name="DepositButton" Margin="-17,213,-50,-20">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="Source/Пополнить.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=DepositButton}"
+                                             Value="True">
+                                    <Setter Property="Source" Value="Source/Пополнить active.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </Grid>
+            <Border Grid.Row="2" Height="25" Width="45" HorizontalAlignment="Left"
+                    VerticalAlignment="Top" Margin="25,15,0,0" CornerRadius="2"
+                    BorderThickness="1" Background="Black">
+                <Button></Button>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
+ 
+
+
+
+    
