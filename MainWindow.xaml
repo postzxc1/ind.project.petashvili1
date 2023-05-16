@@ -13,6 +13,25 @@
             <GradientStop Color="Aqua" Offset="0.509"/>
         </LinearGradientBrush>
     </Window.Background>
+    <Window.Resources>
+        <Style x:Key="Comboboxbutton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" Value="#FFA6A2A2"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
@@ -98,7 +117,7 @@
             <Border Grid.Row="2" Height="25" Width="45" HorizontalAlignment="Left"
                     VerticalAlignment="Top" Margin="25,15,0,0" CornerRadius="2"
                     BorderThickness="1" Background="Black">
-                <Button></Button>
+                <Button Style="{StaticResource Comboboxbutton}"</Button>
             </Border>
         </Grid>
     </Grid>
