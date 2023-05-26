@@ -119,5 +119,35 @@
   <ItemGroup>
     <Resource Include="Source\Пополнить active.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\nastr active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\nastr passive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\chetpassive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\chetactive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\balancepassive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\balanceactive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\rashodpassive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\rashodactive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\daanpassive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\daanactive.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

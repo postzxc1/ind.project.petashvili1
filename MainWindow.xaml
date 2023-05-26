@@ -46,14 +46,34 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="Cmbbtn" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" Value="#FFA6A2A2"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30 0 0 0"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF323945"/>
+                                <Setter Property="Foreground" Value="#FFC3C4CB"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="24.775"/>
-            <RowDefinition Height="275.225"/>
-            <RowDefinition Height="90"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="375"/>
         </Grid.RowDefinitions>
         <Grid Name="ToolBar" Grid.Row="0">
             <Polygon Fill="Black" Opacity="0.3"
@@ -97,39 +117,9 @@
             </StackPanel>
         </Grid>
         <Grid Name="LogoContainer" Grid.Row="1">
-            <Image Source="/Source/Кошелек.png" Margin="0,0,0,-74"/>
-            <Grid Name="LogoPayments" Grid.Row="2">
-                <Image Name="PaymentsButton" Margin="-118,210,118,-210">
-                    <Image.Style>
-                        <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="Source/Payments.png"/>
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=PaymentsButton}"
-                                             Value="True">
-                                    <Setter Property="Source" Value="Source/Payments active.png"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Image.Style>
-                </Image>
-            </Grid>
-            <Image Source="/Source/Пополнить.png" Margin="149,207,-87,-203"/>
-            <Grid Name="LogoПополнить" Grid.Row="3">
-                <Image Name="DepositButton" Margin="-17,213,-50,-20">
-                    <Image.Style>
-                        <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="Source/Пополнить.png"/>
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=DepositButton}"
-                                             Value="True">
-                                    <Setter Property="Source" Value="Source/Пополнить active.png"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Image.Style>
-                </Image>
-            </Grid>
-            <Border Grid.Row="2" Height="25" Width="45" HorizontalAlignment="Left"
+            <Image Source="/Source/Кошелек.png" Margin="0,0,0,0"/>
+
+            <Border Name="cbmBorder" Grid.Row="2" Height="25" Width="45" HorizontalAlignment="Left"
                     VerticalAlignment="Top" Margin="25,15,0,0" CornerRadius="2"
                     BorderThickness="1" Background="Black">
                 <Border.Style>
@@ -137,17 +127,165 @@
                         <Setter Property="BorderBrush" Value="Black"/>
                     </Style>
                 </Border.Style>
-                <Button Style="{StaticResource Comboboxbutton}">
+                <Button Style="{StaticResource Comboboxbutton}" Click="Button_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="14" Width="14" Margin="5,0,0,0">
                             <Image.Style>
                                 <Style TargetType="{x:Type Image}">
+                                    <Setter Property="Source" Value="Source/nastr passive.png"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=IsMouseOver, 
+                                            ElementName=cbmBorder}" Value="True">
+                                            <Setter Property="Source" Value="Source/nastr active.png"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource 
+                                            FindAncestor,AncestorType={x:Type Button},AncestorLevel=1},
+                                            Path=IsPressed}" 
+                                            Value="True">
+                                            <Setter Property="Source" Value="Source/nastr passive.png"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
                                 </Style>
                             </Image.Style>
                         </Image>
                     </StackPanel>
                 </Button>
             </Border>
+            <Grid Name="LeftGrid" Height="160" Width="201" HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Margin="25,42,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Polygon Fill="Gray" StrokeThickness="2" Stroke="Black"
+                     Points="0,8,
+                     0,145,
+                     190,145,
+                     190,8
+                     37,8
+                     29,0
+                     21,8" Grid.ColumnSpan="2"/>
+                <Polygon Fill="White" StrokeThickness="1" 
+                     Points="0,8,
+                     0,145,
+                     190,145,
+                     190,8
+                     37,8
+                     29,0
+                     21,8" Grid.ColumnSpan="2" Stroke="White"/>
+                <StackPanel Orientation="Vertical" Grid.ColumnSpan="2" Margin="0,0,10,0">
+                    <Button Style="{StaticResource Cmbbtn}" Width="191" Click="Button_Click">
+                        <TextBlock Text="Идентификация" Width="111"/>
+   
+                    </Button>
+                    <Button Style="{StaticResource Cmbbtn}" Width="191">
+                        <TextBlock Text="Настройка безопасности" Width="150"/>
+                    </Button>
+                    <Button Style="{StaticResource Cmbbtn}" Width="191">
+                        <TextBlock Text="Уведомления" Width="111"/>
+                    </Button>
+                    <Button Style="{StaticResource Cmbbtn}" Width="191">
+                        <TextBlock Text="Новый пароль" Width="111"/>
+                    </Button>
+                    <Button Style="{StaticResource Cmbbtn}" Width="191">
+                        <TextBlock Text="Нужна помощь" Width="111"/>
+                    </Button>
+                    <Button Style="{StaticResource Cmbbtn}" Width="191">
+                        <TextBlock Text="Поддержка" Width="111"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Name="LogoPayments" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Name="PaymentsButton" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 10 40 0">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="Source/Payments.png"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=PaymentsButton}"
+                                             Value="True">
+                                <Setter Property="Source" Value="Source/Payments active.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+
+            <Image Name="Chetpassive" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 110 40 0">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="Source/chetpassive.png"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=Chetpassive}"
+                                             Value="True">
+                                <Setter Property="Source" Value="Source/chetactive.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+
+            <Image Name="Balance" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 210 40 0">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="Source/balancepassive.png"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=Balance}"
+                                             Value="True">
+                                <Setter Property="Source" Value="Source/balanceactive.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+
+            <Image Name="DepositButton" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 10 40 0">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="Source/Пополнить.png"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=DepositButton}"
+                                             Value="True">
+                                <Setter Property="Source" Value="Source/Пополнить active.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+
+            <Image Name="Rashod" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 110 40 0">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="Source/rashodpassive.png"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=Rashod}"
+                                             Value="True">
+                                <Setter Property="Source" Value="Source/rashodactive.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+
+            <Image Name="Daan" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 210 40 0">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="Source/daanpassive.png"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=Daan}"
+                                             Value="True">
+                                <Setter Property="Source" Value="Source/daanactive.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+
         </Grid>
     </Grid>
 </Window>
@@ -156,4 +294,3 @@
 
 
 
-    
