@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 namespace ind.project.petashvili1
 {
     /// <summary>
@@ -41,6 +42,17 @@ namespace ind.project.petashvili1
                 LeftGrid.Visibility = Visibility.Visible;
             else
                 LeftGrid.Visibility = Visibility.Hidden;
+        }
+
+        private void Id_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 IdWindow = new Window1();
+            IdWindow.Show();
+        }
+
+        private void Bezopasno_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

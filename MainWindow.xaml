@@ -174,23 +174,22 @@
                      29,0
                      21,8" Grid.ColumnSpan="2" Stroke="White"/>
                 <StackPanel Orientation="Vertical" Grid.ColumnSpan="2" Margin="0,0,10,0">
-                    <Button Style="{StaticResource Cmbbtn}" Width="191" Click="Button_Click">
-                        <TextBlock Text="Идентификация" Width="111"/>
-   
+                    <Button x:Name="Id" Style="{StaticResource Cmbbtn}" Width="191" Click="Id_Click">
+                        <TextBlock Text="Идентификация" Width="150"/>
                     </Button>
-                    <Button Style="{StaticResource Cmbbtn}" Width="191">
+                    <Button x:Name="Bezopasno" Style="{StaticResource Cmbbtn}" Width="191" Click="Bezopasno_Click">
                         <TextBlock Text="Настройка безопасности" Width="150"/>
                     </Button>
-                    <Button Style="{StaticResource Cmbbtn}" Width="191">
+                    <Button x:Name="Yvedomlenie" Style="{StaticResource Cmbbtn}" Width="191" Click="Button_Click">
                         <TextBlock Text="Уведомления" Width="111"/>
                     </Button>
-                    <Button Style="{StaticResource Cmbbtn}" Width="191">
+                    <Button x:Name="Parol" Style="{StaticResource Cmbbtn}" Width="191" Click="Button_Click">
                         <TextBlock Text="Новый пароль" Width="111"/>
                     </Button>
-                    <Button Style="{StaticResource Cmbbtn}" Width="191">
+                    <Button x:Name="Pomogite" Style="{StaticResource Cmbbtn}" Width="191" Click="Button_Click">
                         <TextBlock Text="Нужна помощь" Width="111"/>
                     </Button>
-                    <Button Style="{StaticResource Cmbbtn}" Width="191">
+                    <Button x:Name="Podderzhka" Style="{StaticResource Cmbbtn}" Width="191" Click="Button_Click">
                         <TextBlock Text="Поддержка" Width="111"/>
                     </Button>
                 </StackPanel>
@@ -205,7 +204,7 @@
             <Image Name="PaymentsButton" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 10 40 0">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
-                        <Setter Property="Source" Value="Source/Payments.png"/>
+                        <Setter Property="Source" Value="Source/payments.png"/>
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding IsMouseOver, ElementName=PaymentsButton}"
                                              Value="True">
