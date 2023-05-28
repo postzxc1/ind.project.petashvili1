@@ -180,16 +180,16 @@
                     <Button x:Name="Bezopasno" Style="{StaticResource Cmbbtn}" Width="191" Click="Bezopasno_Click">
                         <TextBlock Text="Настройка безопасности" Width="150"/>
                     </Button>
-                    <Button x:Name="Yvedomlenie" Style="{StaticResource Cmbbtn}" Width="191" Click="Button_Click">
+                    <Button x:Name="Yvedomlenie" Style="{StaticResource Cmbbtn}" Width="191" Click="Yvedomlenie_Click">
                         <TextBlock Text="Уведомления" Width="111"/>
                     </Button>
-                    <Button x:Name="Parol" Style="{StaticResource Cmbbtn}" Width="191" Click="Button_Click">
+                    <Button x:Name="Parol" Style="{StaticResource Cmbbtn}" Width="191" Click="Parol_Click">
                         <TextBlock Text="Новый пароль" Width="111"/>
                     </Button>
-                    <Button x:Name="Pomogite" Style="{StaticResource Cmbbtn}" Width="191" Click="Button_Click">
+                    <Button x:Name="Pomogite" Style="{StaticResource Cmbbtn}" Width="191" Click="Pomogite_Click">
                         <TextBlock Text="Нужна помощь" Width="111"/>
                     </Button>
-                    <Button x:Name="Podderzhka" Style="{StaticResource Cmbbtn}" Width="191" Click="Button_Click">
+                    <Button x:Name="Podderzhka" Style="{StaticResource Cmbbtn}" Width="191" Click="Podderzhka_Click">
                         <TextBlock Text="Поддержка" Width="111"/>
                     </Button>
                 </StackPanel>
@@ -200,8 +200,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-
-            <Image Name="PaymentsButton" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 10 40 0">
+            
+            <Image Name="PaymentsButton" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 10 40 0" MouseDown="PaymentsButton_MouseDown" Cursor="Hand">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
                         <Setter Property="Source" Value="Source/payments.png"/>
@@ -215,7 +215,7 @@
                 </Image.Style>
             </Image>
 
-            <Image Name="Chetpassive" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 110 40 0">
+            <Image Name="Chetpassive" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 110 40 0" MouseDown="Chetpassive_MouseDown" Cursor="Hand">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
                         <Setter Property="Source" Value="Source/chetpassive.png"/>
@@ -229,7 +229,7 @@
                 </Image.Style>
             </Image>
 
-            <Image Name="Balance" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 210 40 0">
+            <Image Name="Balance" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 210 40 0" MouseDown="BalanceButton_MouseDown" Cursor="Hand">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
                         <Setter Property="Source" Value="Source/balancepassive.png"/>
@@ -243,7 +243,7 @@
                 </Image.Style>
             </Image>
 
-            <Image Name="DepositButton" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 10 40 0">
+            <Image Name="DepositButton" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 10 40 0" MouseDown="DepositButton_MouseDown" Cursor="Hand">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
                         <Setter Property="Source" Value="Source/Пополнить.png"/>
@@ -257,7 +257,7 @@
                 </Image.Style>
             </Image>
 
-            <Image Name="Rashod" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 110 40 0">
+            <Image Name="Rashod" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 110 40 0" MouseDown="Rashod_MouseDown" Cursor="Hand">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
                         <Setter Property="Source" Value="Source/rashodpassive.png"/>
@@ -271,7 +271,7 @@
                 </Image.Style>
             </Image>
 
-            <Image Name="Daan" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 210 40 0">
+            <Image Name="Daan" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40 210 40 0" MouseDown="Daan_MouseDown" Cursor="Hand">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
                         <Setter Property="Source" Value="Source/daanpassive.png"/>
@@ -288,7 +288,7 @@
         </Grid>
     </Grid>
 </Window>
-    
+
  
 
 

@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ind.project.petashvili1"
         mc:Ignorable="d"
-        Title="Window1" Height="600" Width="400">
+        Title="Идентификация" Height="600" Width="400"  WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="AntiqueWhite" Offset="0"/>
+            <GradientStop Color="White" Offset="1"/>
+            <GradientStop Color="Aqua" Offset="0.509"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        <TextBlock Text="Идентификация"/>
+        <Image Source="/Source/identifikacia.png" Margin="0,0,0,286"/>
+        <Button x:Name="ident" Click="ident_Click" Margin="80,303,80,201">
+            <TextBlock Text="Пройти идентификацию" Width="150"/>
+        </Button>
     </Grid>
 </Window>

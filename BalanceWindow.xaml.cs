@@ -15,19 +15,13 @@ using System.Windows.Shapes;
 namespace ind.project.petashvili1
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Логика взаимодействия для BalanceWindow.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class BalanceWindow : Window
     {
-        public Window1()
+        public BalanceWindow()
         {
             InitializeComponent();
-        }
-
-        private void ident_Click(object sender, RoutedEventArgs e)
-        {
-            identifikaciaOK identifikaciaOK = new identifikaciaOK();
-            identifikaciaOK.Show();
         }
     }
 }

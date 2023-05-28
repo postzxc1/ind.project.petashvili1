@@ -55,12 +55,61 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BalanceWindow.xaml.cs">
+      <DependentUpon>BalanceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChetaWindow.xaml.cs">
+      <DependentUpon>ChetaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DaanWindow.xaml.cs">
+      <DependentUpon>DaanWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="identifikaciaOK.xaml.cs">
+      <DependentUpon>identifikaciaOK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentsWindow.xaml.cs">
+      <DependentUpon>PaymentsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PopolnenieWindow.xaml.cs">
+      <DependentUpon>PopolnenieWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RashodWindow.xaml.cs">
+      <DependentUpon>RashodWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window2.xaml.cs">
       <DependentUpon>Window2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Window3.xaml.cs">
+      <DependentUpon>Window3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window4.xaml.cs">
+      <DependentUpon>Window4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window5.xaml.cs">
+      <DependentUpon>Window5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window6.xaml.cs">
+      <DependentUpon>Window6.xaml</DependentUpon>
+    </Compile>
+    <Page Include="BalanceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChetaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DaanWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="identifikaciaOK.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,11 +122,39 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PaymentsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PopolnenieWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RashodWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Window2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window6.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -162,6 +239,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Source\daanactive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\identifikacia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\bezopasno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\yvedy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\pomogi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\podderzhka.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,19 +15,13 @@ using System.Windows.Shapes;
 namespace ind.project.petashvili1
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Логика взаимодействия для PaymentsWindow.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class PaymentsWindow : Window
     {
-        public Window1()
+        public PaymentsWindow()
         {
             InitializeComponent();
-        }
-
-        private void ident_Click(object sender, RoutedEventArgs e)
-        {
-            identifikaciaOK identifikaciaOK = new identifikaciaOK();
-            identifikaciaOK.Show();
         }
     }
 }
